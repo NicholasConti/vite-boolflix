@@ -25,7 +25,18 @@ export default {
             })
                 .then((response) => {
                     this.store.movies = response.data.results;
-                    console.log(this.store.movies);
+                    // console.log(this.store.movies);
+                })
+
+            axios.get(store.config.ulr_series, {
+                params: {
+                    api_key: store.config.apiKey,
+                    query: store.searchText
+                }
+            })
+                .then((response) => {
+                    this.store.series = response.data.results;
+                    console.log(this.store.series);
                 })
         }
     }

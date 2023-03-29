@@ -7,6 +7,7 @@ export const store = reactive({
     config: {
         apiKey: '157fa4cf440f53cf54157c90f392fc84',
         url_movies: 'https://api.themoviedb.org/3/search/movie',
+        ulr_series: 'https://api.themoviedb.org/3/search/tv',
         languages: ['en', 'fr', 'it', 'ja', 'sp'] //LINGUE DISPONIBILI
     }
 });
