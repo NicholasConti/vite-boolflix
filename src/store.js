@@ -5,6 +5,7 @@ export const store = reactive({
     movies: [],
     series: [],
     config: {
-        apiKey: '157fa4cf440f53cf54157c90f392fc84'
+        apiKey: '157fa4cf440f53cf54157c90f392fc84',
+        url_movies: 'https://api.themoviedb.org/3/search/movie'
     }
 });
