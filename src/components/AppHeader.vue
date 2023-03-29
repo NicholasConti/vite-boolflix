@@ -9,7 +9,20 @@ export default {
 
         }
     },
-    emits: ["searchName"]
+    emits: ["searchName"],
+    methods: {
+        flags(country) {
+            let text = '';
+            switch (country) {
+                case "en":
+                    text = "../assets/img/united-kingdom.png";
+                    break;
+            }
+            console.log(text);
+            return text;
+        }
+    }
+
 }
 </script>
 
@@ -18,16 +31,6 @@ export default {
         <input type="text" placeholder="Search Film" v-model="store.searchText">
         <button type="submit">Search</button>
     </form>
-    <ul>
-        <li v-for="movie in store.movies">
-            <h4> {{ movie.title }}</h4>
-            <ul>
-                <li>{{ movie.original_title }}</li>
-                <li>{{ movie.original_language }}</li>
-                <li>{{ movie.vote_average }}</li>
-            </ul>
-        </li>
-    </ul>
 </template>
 
 <style lang="scss" scoped></style>
