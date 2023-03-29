@@ -8,7 +8,8 @@ export default {
             store,
 
         }
-    }
+    },
+    emits: ["searchName"]
 }
 </script>
 
