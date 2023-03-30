@@ -10,5 +10,6 @@ export const store = reactive({
         ulr_series: 'https://api.themoviedb.org/3/search/tv',
         user_language: 'it-IT',
         url_img: 'https://image.tmdb.org/t/p/w342/'
-    }
+    },
+    linksHome: ['Home', 'Serie TV', 'Film', 'Originali', 'Aggiunti di recente', 'La mia lista']
 });

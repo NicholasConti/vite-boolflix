@@ -43,8 +43,8 @@ export default {
     <article>
         <ul>
             <li>
-                <h4> {{ title }}</h4>
                 <img :src="store.config.url_img + img" :alt="title">
+                <h4> {{ title }}</h4>
                 <ul>
                     <li>{{ original_title }}</li>
                     <li><country-flag :country='getLanguage' size='small' /></li>

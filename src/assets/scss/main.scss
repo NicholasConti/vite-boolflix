@@ -1,0 +1,18 @@
+@use './_partial.scss/reset' as *;
+@use './_partial.scss/variables' as *;
+
+// Import all of Bootstrap's CSS
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+    background-color: $primary;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
