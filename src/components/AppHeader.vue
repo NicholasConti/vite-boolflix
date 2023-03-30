@@ -9,7 +9,7 @@ export default {
 
         }
     },
-    emits: ["searchName"],
+    emits: ["search-name"],
     methods: {
         flags(country) {
             let text = '';
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-    <form @submit.prevent="$emit('searchName')">
+    <form @submit.prevent="$emit('search-name')">
         <input type="text" placeholder="Search Film" v-model="store.searchText">
         <button type="submit">Search</button>
     </form>

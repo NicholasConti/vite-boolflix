@@ -36,7 +36,7 @@ export default {
             })
                 .then((response) => {
                     this.store.series = response.data.results;
-                    console.log(this.store.series);
+                    //console.log(this.store.series);
                 })
         }
     }
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <template>
-    <AppHeader @searchName="search" />
+    <AppHeader @search-name="search" />
     <AppMain />
 </template>
 
