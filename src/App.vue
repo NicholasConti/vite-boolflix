@@ -20,6 +20,7 @@ export default {
             axios.get(store.config.url_movies, {
                 params: {
                     api_key: store.config.apiKey,
+                    language: store.config.user_language,
                     query: store.searchText
                 }
             })
@@ -31,6 +32,7 @@ export default {
             axios.get(store.config.ulr_series, {
                 params: {
                     api_key: store.config.apiKey,
+                    language: store.config.user_language,
                     query: store.searchText
                 }
             })
