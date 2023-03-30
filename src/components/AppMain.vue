@@ -4,7 +4,7 @@ import AppCard from './AppCard.vue';
 export default {
     name: 'Main',
     components: {
-        AppCard
+        AppCard,
     },
     data() {
         return {
@@ -20,7 +20,6 @@ export default {
             <div v-for="movie in store.movies">
                 <AppCard :title="movie.title" :original_title="movie.original_title" :flag="movie.original_language"
                     :vote="movie.vote_average" />
-                <p>film</p>
             </div>
         </div>
         <div>
