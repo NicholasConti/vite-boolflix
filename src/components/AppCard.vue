@@ -1,11 +1,18 @@
 <script>
+import { store } from '../store';
 import CountryFlag from 'vue-country-flag-next'
 export default {
     name: 'Card',
     components: {
         CountryFlag
     },
+    data() {
+        return {
+            store
+        }
+    },
     props: {
+        img: String,
         title: String,
         original_title: String,
         flag: String,
@@ -34,6 +41,7 @@ export default {
         <ul>
             <li>
                 <h4> {{ title }}</h4>
+                <img :src="store.config.url_img + img" :alt="title">
                 <ul>
                     <li>{{ original_title }}</li>
                     <li><country-flag :country='getLanguage' size='small' /></li>

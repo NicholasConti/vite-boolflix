@@ -18,14 +18,14 @@ export default {
     <section class="boh">
         <div>
             <div v-for="movie in store.movies">
-                <AppCard :title="movie.title" :original_title="movie.original_title" :flag="movie.original_language"
-                    :vote="movie.vote_average" />
+                <AppCard :img="movie.poster_path" :title="movie.title" :original_title="movie.original_title"
+                    :flag="movie.original_language" :vote="movie.vote_average" />
             </div>
         </div>
         <div>
             <div v-for="serie in store.series">
-                <AppCard :title="serie.name" :original_title="serie.original_name" :flag="serie.original_language"
-                    :vote="serie.vote_average" />
+                <AppCard :img="serie.poster_path" :title="serie.name" :original_title="serie.original_name"
+                    :flag="serie.original_language" :vote="serie.vote_average" />
             </div>
         </div>
     </section>
