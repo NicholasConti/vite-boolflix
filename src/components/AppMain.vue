@@ -11,13 +11,19 @@ export default {
             store,
 
         }
+    },
+    computed: {
+        result() {
+            return [...this.store.movies, ...this.store.series];
+        }
     }
+
 }
 </script>
 <template>
     <section class="text-white">
         <div class="d-flex">
-            <div v-for="resultMix in store.allResults">
+            <div v-for="resultMix in result">
                 <AppCard :info="resultMix" />
             </div>
         </div>

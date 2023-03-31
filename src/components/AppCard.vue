@@ -24,7 +24,7 @@ export default {
                 case "ja":
                     return "jp";
                 default:
-                    return this.flag;
+                    return this.info.original_language;
             }
         },
         getVote() {
@@ -35,17 +35,22 @@ export default {
         },
         original_title() {
             return this.info.original_title || this.info.original_name;
+        },
+        checkImg() {
+            if (this.info.poster_path === null) {
+                return 'https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg';
+            } else {
+                return (store.config.url_img + this.info.poster_path);
+            }
         }
     }
 }
 </script>
-
-
 <template>
     <article>
         <ul>
             <li>
-                <img :src="store.config.url_img + info.poster_path" :alt="title">
+                <img :src="checkImg" :alt="title">
                 <h4> {{ title }}</h4>
                 <ul>
                     <li>{{ original_title }}</li>
@@ -59,3 +64,9 @@ export default {
         </ul>
     </article>
 </template>
+<style scoped>
+img {
+    width: 342px;
+    height: 513px;
+}
+</style>

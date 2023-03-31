@@ -42,11 +42,6 @@ export default {
                     //console.log(this.store.series);
                 })
         }
-    },
-    computed: {
-        result() {
-            return this.store.allResults = [...this.store.movies, ...this.store.series];
-        }
     }
 }
 </script>
