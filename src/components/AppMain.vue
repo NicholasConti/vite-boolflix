@@ -13,6 +13,7 @@ export default {
         }
     },
     computed: {
+        //FUNZIONE CHE UNISCE I RISULTATI OTTENUTI DALLE CHIAMATE TRAMITE AXIOS PER I FILM E LE SERIE
         result() {
             return [...this.store.movies, ...this.store.series];
         }
@@ -21,16 +22,18 @@ export default {
 }
 </script>
 <template>
+    <!-- controllo per vedere se non ci sono risultati da stampare a schermo -->
     <section class="text-white" v-if="result.length > 0">
-        <h1 class="p-3">Risultati:</h1>
+        <h1 class="p-3">Risultati: {{ result.length }}</h1>
         <div class="d-flex">
+            <!-- ciclo per stampare i risultati -->
             <div v-for="resultMix in result">
                 <AppCard :info="resultMix" />
             </div>
         </div>
     </section>
     <secttion class="text-white" v-else>
-        <h1 class="pt-5">Benvenuto!! Che cosa vuoi veder oggi?</h1>
+        <h1 class="pt-5">Benvenuto!! Cosa vuoi veder oggi?</h1>
     </secttion>
 </template>
 

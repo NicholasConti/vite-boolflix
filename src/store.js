@@ -11,5 +11,6 @@ export const store = reactive({
         user_language: 'it-IT',
         url_img: 'https://image.tmdb.org/t/p/w500/'
     },
+    // ipotetici link della menu home
     linksHome: ['Home', 'Serie TV', 'Film', 'Originali', 'Aggiunti di recente', 'La mia lista']
 });

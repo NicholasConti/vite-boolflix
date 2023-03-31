@@ -15,6 +15,7 @@ export default {
         info: Object
     },
     computed: {
+        // funzione che corregge alcuni valori per usare il pacchetto delle bandiere
         getLanguage() {
             switch (this.info.original_language) {
                 case 'en':
@@ -31,11 +32,12 @@ export default {
             return Math.ceil(this.info.vote_average / 2);
         },
         title() {
-            return this.info.title || this.info.name;
+            return this.info.title || this.info.name; // ritorna il titolo del film o della serie
         },
         original_title() {
-            return this.info.original_title || this.info.original_name;
+            return this.info.original_title || this.info.original_name; // ritorna o il titolo in  lingua originale  del film o della serie
         },
+        // funzione che controlla se il valore dei poster_path nell oggetto e nullo, se vero restituisce un immagine di default
         checkImg() {
             if (this.info.poster_path === null) {
                 return 'https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg';
@@ -68,6 +70,11 @@ export default {
     </article>
 </template>
 <style scoped lang="scss">
+img {
+    width: 100%;
+    height: 100%;
+}
+
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
@@ -93,7 +100,6 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
