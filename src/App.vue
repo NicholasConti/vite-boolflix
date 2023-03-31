@@ -16,7 +16,8 @@ export default {
     },
     methods: {
         search() {
-            console.log('ho ascoltato questo evento');
+            //console.log('ho ascoltato questo evento');
+            //CHIAMATA MOVIES
             axios.get(store.config.url_movies, {
                 params: {
                     api_key: store.config.apiKey,
@@ -28,7 +29,7 @@ export default {
                     this.store.movies = response.data.results;
                     // console.log(this.store.movies);
                 })
-
+            // CHIAMATA SERIE TV    
             axios.get(store.config.ulr_series, {
                 params: {
                     api_key: store.config.apiKey,
@@ -40,6 +41,11 @@ export default {
                     this.store.series = response.data.results;
                     //console.log(this.store.series);
                 })
+        }
+    },
+    computed: {
+        result() {
+            return this.store.allResults = [...this.store.movies, ...this.store.series];
         }
     }
 }

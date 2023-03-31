@@ -12,15 +12,11 @@ export default {
         }
     },
     props: {
-        img: String,
-        title: String,
-        original_title: String,
-        flag: String,
-        vote: Number
+        info: Object
     },
     computed: {
         getLanguage() {
-            switch (this.flag) {
+            switch (this.info.original_language) {
                 case 'en':
                     return 'gb';
                 case "ko":
@@ -32,7 +28,13 @@ export default {
             }
         },
         getVote() {
-            return Math.ceil(this.vote / 2);
+            return Math.ceil(this.info.vote_average / 2);
+        },
+        title() {
+            return this.info.title || this.info.name;
+        },
+        original_title() {
+            return this.info.original_title || this.info.original_name;
         }
     }
 }
@@ -43,7 +45,7 @@ export default {
     <article>
         <ul>
             <li>
-                <img :src="store.config.url_img + img" :alt="title">
+                <img :src="store.config.url_img + info.poster_path" :alt="title">
                 <h4> {{ title }}</h4>
                 <ul>
                     <li>{{ original_title }}</li>

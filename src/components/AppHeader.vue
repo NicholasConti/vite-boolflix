@@ -16,7 +16,7 @@ export default {
 <template>
     <header class="d-flex justify-content-between p-3 align-items-center">
         <div class="d-flex">
-            <img src="https://image.tmdb.org/t/p/w154/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="logo">
+            <img src="https://image.tmdb.org/t/p/w154/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="logo" class="me-3">
             <ul class="d-flex gap-3">
                 <li v-for="link  in store.linksHome"><a href="#" class="text-white">{{ link }}</a></li>
             </ul>
