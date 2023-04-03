@@ -32,9 +32,9 @@ export default {
             </div>
         </div>
     </section>
-    <secttion class="text-white" v-else>
+    <section class="text-white" v-else>
         <h1 class="pt-5">Benvenuto!! Cosa vuoi veder oggi?</h1>
-    </secttion>
+    </section>
 </template>
 
 <style  scoped></style>
